@@ -3,7 +3,7 @@ import os
 from PIL import Image, ImageTk
 
 app = ctk.CTk()
-app.title("Caesar Chipher")
+app.title("Caesar Cipher")
 app.geometry("1000x700")
 ctk.set_appearance_mode("Dark")
 ctk.set_default_color_theme("blue")
@@ -44,7 +44,7 @@ def getting_shift():
     try:
         return int(entry.get().strip())
     except ValueError:
-        return 3
+        return 13
 
 def encodebtn():
     text = inputbox.get("1.0", "end-1c")
