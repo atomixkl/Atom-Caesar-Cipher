@@ -15,33 +15,28 @@ icon = ImageTk.PhotoImage(Image.open(icon_path))
 app.iconphoto(False, icon)
 app.resizable(False, False)
 
-def caesar(text, shift):
-    eng_lower = "abcdefghijklmnopqrstuvwxyz"
-    eng_upper = eng_lower.upper()
+ALPHABETS = {
+    "English": "abcdefghijklmnopqrstuvwxyz",
+    "Ukrainian": "абвгґдеєжзиіїйклмнопрстуфхцчшщьюя",
+    "Norwegian": "abcdefghijklmnopqrstuvwxyzæøå",
+    "Belarusian (latin)": "abcćčdefghijklłmnńoprsśštuŭvyzźž",
+    "Belarusian (cyrillic)": "абвгдеёжзійклмнопрстуўфхцчшыьэюя"
+}
 
-    ukr_lower = "абвгґдеєжзиіїйклмнопрстуфхцчшщьюя"
-    ukr_upper = ukr_lower.upper()
+def caesar(text, shift, lang):
+    alphabet = ALPHABETS.get(lang, ALPHABETS["English"])
 
     result = ""
 
     for char in text:
-        if char in eng_lower:
-            indx = (eng_lower.index(char) + shift) % len(eng_lower)
-            result += eng_lower[indx]
-    
-        elif char in eng_upper:
-            indx = (eng_upper.index(char) + shift) % len(eng_upper)
-            result += eng_upper[indx]
-
-        elif char in ukr_lower:
-            indx = (ukr_lower.index(char) + shift) % len(ukr_lower)
-            result += ukr_lower[indx]
-
-        elif char in ukr_upper:
-            indx = (ukr_upper.index(char) + shift) % len(ukr_upper)
-            result += ukr_upper[indx]
+        char_lower = char.lower()
+        if char_lower in alphabet:
+            indx = (alphabet.index(char_lower) + shift) % len(alphabet)
+            new_char = alphabet[indx]
+            result += new_char.upper() if char.isupper() else new_char
         else:
             result += char
+
     return result    
 
 
@@ -54,14 +49,14 @@ def getting_shift():
 def encodebtn():
     text = inputbox.get("1.0", "end-1c")
     shift = getting_shift()
-    result = caesar(text, shift)
+    result = caesar(text, shift, options.get())
     outputbox.delete("1.0", "end")
     outputbox.insert("1.0", result)
 
 def decodebtn():
     text = inputbox.get("1.0", "end-1c")
     shift = getting_shift()
-    result = caesar(text, -shift)
+    result = caesar(text, -shift, options.get())
     outputbox.delete("1.0", "end")
     outputbox.insert("1.0", result)
 
@@ -77,23 +72,29 @@ def copytext():
         app.after(2000, lambda: copybutton.configure(text = "Copy"))
 
 encodeb = ctk.CTkButton(master=app, text = "Encode the text", corner_radius=40, font=("Arial", 25, "bold"), command=encodebtn)
-encodeb.place(relx=0.32, rely=0.48, anchor="center")
+encodeb.place(relx=0.17, rely=0.48, anchor="center")
 
 decodeb = ctk.CTkButton(master=app, text = "Decode the text", corner_radius=40, font=("Arial", 25, "bold"), command=decodebtn)
-decodeb.place(relx=0.68, rely=0.48, anchor="center")
+decodeb.place(relx=0.53, rely=0.48, anchor="center")
 
 
 entry = ctk.CTkEntry(master=app, placeholder_text="Shift", corner_radius=20, font=("Arial", 25, "bold"), width=100, height=40, border_width=3)
-entry.place(relx=0.5, rely=0.48, anchor="center")
+entry.place(relx=0.35, rely=0.48, anchor="center")
 
 
-inputbox = ctk.CTkTextbox(master=app, corner_radius=20, width=450, height=220, font=("Arial", 25, "bold"), border_color="#1B6AAE", border_width=3, wrap="word")
-inputbox.place(relx=0.5, rely=0.22, anchor="center")
+inputbox = ctk.CTkTextbox(master=app, corner_radius=20, width=550, height=250, font=("Arial", 25, "bold"), border_color="#1B6AAE", border_width=3, wrap="word")
+inputbox.place(relx=0.35, rely=0.22, anchor="center")
 
-outputbox = ctk.CTkTextbox(master=app, corner_radius=20, width=450, height=220, font=("Arial", 25, "bold"), border_color="#1B6AAE", border_width=3, wrap="word")
-outputbox.place(relx=0.5, rely=0.75, anchor="center")
+outputbox = ctk.CTkTextbox(master=app, corner_radius=20, width=550, height=250, font=("Arial", 25, "bold"), border_color="#1B6AAE", border_width=3, wrap="word")
+outputbox.place(relx=0.35, rely=0.75, anchor="center")
 
-copybutton = ctk.CTkButton(master=app, text = "Copy", corner_radius=5, font=("Arial", 18, "bold"), width=60, height=35, command=copytext)
-copybutton.place(relx=0.77, rely=0.87, anchor="center")
+copybutton = ctk.CTkButton(master=app, text = "Copy", corner_radius=5, font=("Arial", 18, "bold"), width=60, height=35,  command=copytext)
+copybutton.place(relx=0.67, rely=0.87, anchor="center")
+
+options = ctk.CTkOptionMenu(master=app, values=["English", "Ukrainian", "Norwegian", "Belarusian (latin)", "Belarusian (cyrillic)"], font=("Arial", 22, "bold"))
+options.place(relx=0.82, rely=0.06, anchor="center")
+
+label = ctk.CTkLabel(master=app, text="V2", font=("Arial", 15), text_color="grey")
+label.place(relx=0.98, rely=0.98, anchor="center")
 
 app.mainloop()
