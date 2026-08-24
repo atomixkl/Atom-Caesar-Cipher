@@ -1,16 +1,27 @@
 import customtkinter as ctk
 import os
+import sys
 from PIL import Image, ImageTk
 
 app = ctk.CTk()
-app.title("Caesar Cipher")
+app.title("Atom Caesar Cipher")
 app.geometry("1000x700")
 ctk.set_appearance_mode("Dark")
 ctk.set_default_color_theme("blue")
 
-BASE_DIR = os.path.dirname(__file__)
+
+if getattr(sys, 'frozen', False):
+    BASE_DIR = sys._MEIPASS
+else:
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
 icon_path = os.path.join(BASE_DIR, "icon", "1240849307331198986.png")
 icon = ImageTk.PhotoImage(Image.open(icon_path))
+
+
+#BASE_DIR = os.path.dirname(__file__)
+#icon_path = os.path.join(BASE_DIR, "icon", "1240849307331198986.png")
+#icon = ImageTk.PhotoImage(Image.open(icon_path))
 
 app.iconphoto(False, icon)
 app.resizable(False, False)
@@ -94,7 +105,7 @@ copybutton.place(relx=0.67, rely=0.87, anchor="center")
 options = ctk.CTkOptionMenu(master=app, values=["English", "Ukrainian", "Norwegian", "Belarusian (latin)", "Belarusian (cyrillic)"], font=("Arial", 22, "bold"))
 options.place(relx=0.82, rely=0.06, anchor="center")
 
-label = ctk.CTkLabel(master=app, text="V2", font=("Arial", 15), text_color="grey")
+label = ctk.CTkLabel(master=app, text="V2.1", font=("Arial", 15), text_color="grey")
 label.place(relx=0.98, rely=0.98, anchor="center")
 
 app.mainloop()
