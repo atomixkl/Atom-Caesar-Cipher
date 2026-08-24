@@ -1,5 +1,5 @@
 # Atom Caesar Cipher
-### This is a simpe GUI program that uses the Caesar cipher to encode or decode your message in English, Ukrainian, Norwegian or Belarusian
+### This is a simple GUI program that uses the Caesar cipher to encode or decode your message in English, Ukrainian, Norwegian or Belarusian
 
 It's built with customtkinter and pillow libraries
 
