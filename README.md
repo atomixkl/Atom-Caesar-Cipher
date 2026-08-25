@@ -3,6 +3,12 @@
 
 It's built with customtkinter and pillow libraries
 
+### To run from source code:
+
+```bash
+pip install customtkinter pillow
+python main.py
+
 ### To run this program you need to:
 
 Download AtomCC from the releases, grant execution permissions with chmod +x AtomCC and run it :3
