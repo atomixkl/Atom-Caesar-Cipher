@@ -9,7 +9,7 @@
 
 * customtkinter and pillow
 
-## Binary app copiled with:
+## Binary app compiled with:
 
 ```
 PyInstaller
