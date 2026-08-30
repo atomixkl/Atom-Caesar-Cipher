@@ -11,9 +11,9 @@
 
 ## Binary app compiled with:
 
-```
-PyInstaller
-```
+
+* PyInstaller
+
 
 ## To run this program with binary app you need to:
 
