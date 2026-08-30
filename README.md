@@ -1,15 +1,15 @@
 # Atom Caesar Cipher
 ### This is a desktop GUI app built with Python programming language for encrypting and decrypting text using the Caesar cipher
 
-## Supported languages:
+**Supported languages:**
 
 * English, Ukrainian, Norwegian and Belarusian
 
-## Libraries that were used in this project:
+**Libraries that were used in this project:**
 
 * Customtkinter and pillow
 
-## Binary app packaged with:
+**Binary app packaged with:**
 
 
 * PyInstaller
