@@ -1,11 +1,26 @@
 # Atom Caesar Cipher
-### This is a simple GUI program that uses the Caesar cipher to encode or decode your message in English, Ukrainian, Norwegian or Belarusian
+### This is a desktop GUI app on Python programming language for encrypting and decrypting your text by using the Caesar cipher
 
-It's built with customtkinter and pillow libraries
+### Supported languages:
 
-### To run this program you need to:
+English, Ukrainian, Norwegian and Belarusian
 
-Download AtomCC from the releases, grant execution permissions with chmod +x AtomCC and run it :3
+### Libraries that were used in this project:
+
+```
+customtkinter
+```
+```
+pillow
+```
+### To run this program with binary app you need to:
+
+Download AtomCC from the releases, grant execution permissions and run it:
+
+```
+chmod +x AtomCC
+./AtomCC
+```
 
 ### To run from source code:
 
