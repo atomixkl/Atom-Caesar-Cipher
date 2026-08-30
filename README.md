@@ -19,6 +19,7 @@ chmod +x AtomCC
 ```
 
 ## To run from source code:
+Download sourse code from the last release, download libraries and run it:
 
 ```
 pip install customtkinter pillow
