@@ -17,7 +17,7 @@
 
 ## To run this program with binary app you need to:
 
-### Download AtomCC from the last release, open your terminal, grant execution permissions and run it:
+**Download AtomCC from the last release, open your terminal, grant execution permissions and run it:**
 
 ```
 chmod +x AtomCC
@@ -25,7 +25,7 @@ chmod +x AtomCC
 ```
 
 ## To run from source code:
-### Download source code from the last release, download libraries and run it:
+**Download source code from the last release, download libraries and run it:**
 
 ```
 pip install customtkinter pillow
