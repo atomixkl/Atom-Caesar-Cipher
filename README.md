@@ -3,7 +3,7 @@
 
 ## Supported languages:
 
-English, Ukrainian, Norwegian and Belarusian
+### English, Ukrainian, Norwegian and Belarusian
 
 ## Libraries that were used in this project:
 
