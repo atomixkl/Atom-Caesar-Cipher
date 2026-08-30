@@ -11,7 +11,7 @@ English, Ukrainian, Norwegian and Belarusian
 
 ## To run this program with binary app you need to:
 
-### Download AtomCC from the releases, grant execution permissions and run it:
+### Download AtomCC from the last release, grant execution permissions and run it:
 
 ```
 chmod +x AtomCC
