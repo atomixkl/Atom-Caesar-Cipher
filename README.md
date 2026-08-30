@@ -7,7 +7,7 @@
 
 ## Libraries that were used in this project:
 
-* customtkinter and pillow
+* Customtkinter and pillow
 
 ## Binary app packaged with:
 
