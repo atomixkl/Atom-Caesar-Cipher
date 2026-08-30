@@ -7,7 +7,13 @@
 
 ## Libraries that were used in this project:
 
-### customtkinter and pillow
+* customtkinter and pillow
+
+## Binary app copiled with:
+
+```
+PyInstaller
+```
 
 ## To run this program with binary app you need to:
 
