@@ -5,7 +5,7 @@
 
 English, Ukrainian, Norwegian and Belarusian
 
-### Libraries that were used in this project:
+## Libraries that were used in this project:
 
 ### customtkinter and pillow
 
