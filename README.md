@@ -14,7 +14,7 @@
 
 * PyInstaller
 
-## !Binarry app compatible only with Linux!
+## Binarry app compatible only with Linux x86_64!
 
 ## To run this program with binary app you need to:
 
